@@ -54,4 +54,13 @@ class BinarySearchTree
       @head.sort
     end
   end
+
+  def load(file_name)
+    File.open(file_name, "r") do |f|
+      f.each_line do |line|
+        line_data = line.split(',')
+        insert(line_data[0].to_i, line_data[1])
+      end
+    end
+  end
 end

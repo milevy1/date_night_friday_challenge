@@ -69,5 +69,16 @@ RSpec.describe 'Binary Search Tree' do
         expect(@tree.sort).to eq(expected)
       end
     end
+
+    describe '.load' do
+      it 'loads a comma separated file of movies and ratings into the tree' do
+        new_tree = BinarySearchTree.new
+
+        new_tree.load('movies.txt')
+
+        expect(new_tree.include?(75)).to be(true)
+        expect(new_tree.include?(-5)).to be(false)
+      end
+    end
   end
 end
