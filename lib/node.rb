@@ -61,4 +61,12 @@ class Node
       end
     end
   end
+
+  def max
+    if @right.nil?
+      { title => rating }
+    else
+      @right.max
+    end
+  end
 end

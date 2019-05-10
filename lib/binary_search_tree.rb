@@ -30,4 +30,12 @@ class BinarySearchTree
       @head.depth_of(rating_query, -1)
     end
   end
+
+  def max
+    if @head.nil?
+      nil
+    else
+      @head.max
+    end
+  end
 end
