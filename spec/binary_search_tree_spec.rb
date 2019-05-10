@@ -43,6 +43,7 @@ RSpec.describe 'Binary Search Tree' do
         @tree.insert(92, "Sharknado 3")
         @tree.insert(50, "Hannibal Buress: Animal Furnace")
       end
+      
       it 'Reports the depth of the tree where a score appears' do
         expect(@tree.depth_of(92)).to eq(1)
         expect(@tree.depth_of(50)).to eq(2)

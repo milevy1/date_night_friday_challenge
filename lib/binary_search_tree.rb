@@ -20,4 +20,14 @@ class BinarySearchTree
       @head.include?(rating_query)
     end
   end
+
+  def depth_of(rating_query)
+    if @head.nil?
+      nil
+    elsif @head.rating == rating_query
+      0
+    else
+      @head.depth_of(rating_query, -1)
+    end
+  end
 end

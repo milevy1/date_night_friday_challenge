@@ -42,4 +42,23 @@ class Node
       end
     end
   end
+
+  def depth_of(rating_query, depth_counter)
+    depth_counter += 1
+    if rating_query == rating
+      depth_counter
+    elsif rating_query < rating
+      if @left.nil?
+        nil
+      else
+        @left.depth_of(rating_query, depth_counter)
+      end
+    elsif rating_query > rating
+      if @right.nil?
+        nil
+      else
+        @right.depth_of(rating_query, depth_counter)
+      end
+    end
+  end
 end
