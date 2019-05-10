@@ -63,4 +63,11 @@ class BinarySearchTree
       end
     end
   end
+
+  def health(tree_depth)
+    [ @head.rating_at(tree_depth),
+      @head.number_of_children(tree_depth),
+      @head.floored_percentage
+    ]
+  end
 end

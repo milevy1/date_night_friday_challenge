@@ -81,16 +81,32 @@ class Node
   def sort(sorted_array = [])
     if @left.nil?
      left = []
-     else
+    else
        left = @left.sort
-     end
+    end
 
-     if @right.nil?
-       right = []
-     else
-       right = @right.sort
-     end
+    if @right.nil?
+     right = []
+    else
+     right = @right.sort
+    end
 
-     return left + [ { title => rating } ] + right
+    return left + [ { title => rating } ] + right
+  end
+
+  def rating_at(tree_depth)
+    if tree_depth == 0
+      rating
+    elsif @left.nil? && @right.nil?
+      nil
+    elsif @left.nil?
+      @right.rating_at(tree_depth - 1)
+    elsif @right.nil?
+      @left.rating_at(tree_depth - 1)
+    else
+      [ @left.rating_at(tree_depth - 1),
+        @right.rating_at(tree_depth - 1)
+      ]
+    end
   end
 end

@@ -80,5 +80,23 @@ RSpec.describe 'Binary Search Tree' do
         expect(new_tree.include?(-5)).to be(false)
       end
     end
+
+    describe '.health' do
+      xit 'summarizes the number of child nodes (nodes beneath each node) at a given depth' do
+        tree = BinarySearchTree.new
+
+        tree.insert(98, "Animals United")
+        tree.insert(58, "Armageddon")
+        tree.insert(36, "Bill & Ted's Bogus Journey")
+        tree.insert(93, "Bill & Ted's Excellent Adventure")
+        tree.insert(86, "Charlie's Angels")
+        tree.insert(38, "Charlie's Country")
+        tree.insert(69, "Collateral Damage")
+
+        expect(tree.health(0)).to eq([[98, 7, 100]])
+        expect(tree.health(1)).to eq([[58, 6, 85]])
+        expect(tree.health(2)).to eq([[36, 2, 28], [93, 3, 42]])
+      end
+    end
   end
 end
