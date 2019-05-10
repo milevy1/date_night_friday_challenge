@@ -51,5 +51,23 @@ RSpec.describe 'Binary Search Tree' do
         expect(@tree.max).to eq({"Sharknado 3"=>92})
       end
     end
+
+    describe '.min' do
+      it 'returns the rating & title with the lowest score in the list' do
+        expect(@tree.min).to eq({"Johnny English"=>16})
+      end
+    end
+
+    describe '.sort' do
+      it 'Return an array of all the movies and scores in sorted ascending order' do
+        expected = [  {"Johnny English"=>16},
+                      {"Hannibal Buress: Animal Furnace"=>50},
+                      {"Bill & Ted's Excellent Adventure"=>61},
+                      {"Sharknado 3"=>92}
+                    ]
+
+        expect(@tree.sort).to eq(expected)
+      end
+    end
   end
 end

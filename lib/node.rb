@@ -69,4 +69,28 @@ class Node
       @right.max
     end
   end
+
+  def min
+    if @left.nil?
+      { title => rating }
+    else
+      @left.min
+    end
+  end
+
+  def sort(sorted_array = [])
+    if @left.nil?
+     left = []
+     else
+       left = @left.sort
+     end
+
+     if @right.nil?
+       right = []
+     else
+       right = @right.sort
+     end
+
+     return left + [ { title => rating } ] + right
+  end
 end

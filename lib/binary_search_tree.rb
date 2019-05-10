@@ -38,4 +38,20 @@ class BinarySearchTree
       @head.max
     end
   end
+
+  def min
+    if @head.nil?
+      nil
+    else
+      @head.min
+    end
+  end
+
+  def sort
+    if @head.nil?
+      nil
+    else
+      @head.sort
+    end
+  end
 end
